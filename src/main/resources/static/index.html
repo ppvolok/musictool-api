@@ -1,16 +1,52 @@
+<!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Musictool</title>
+</head>
 <body>
-<form method="POST" enctype="multipart/form-data" action="/upload">
-    <span>File to upload: </span>
-    <input type="file" name="file"><br/>
-    <span>Name: </span>
-    <input type="text" name="name"><br/><br/>
-    <span>File to upload: </span>
-    <input type="file" name="file"><br/>
-    <span>Name: </span>
-    <input type="text" name="name"><br/><br/>
-    <input type="submit" value="Upload">
-    <span>Press here to upload the file!</span>
+
+<h1 align="center">Загрузка файлов</h1>
+<form method="post" enctype="multipart/form-data" action="/upload">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="input-group-cue-addon">CUE-файл</span>
+                    </div>
+                    <div class="custom-file">
+                        <input data-buttonText="Выбрать" type="file" class="custom-file-input" id="input-group-cue"
+                               aria-describedby="input-group-cue-addon" name="file"/>
+                        <label class="custom-file-label" for="input-group-cue">Выбрать файл</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 mt-1">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="input-group-audio-addon">Аудиофайл</span>
+                    </div>
+                    <div class="custom-file">
+                        <input data-buttonText="Выбрать" type="file" class="custom-file-input" id="input-group-audio"
+                               aria-describedby="input-group-audio-addon" name="file"/>
+                        <label class="custom-file-label" for="input-group-audio">Выбрать файл</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 mt-1" id="upload-button-col">
+                <button type="submit" class="btn btn-primary">Загрузить</button>
+            </div>
+        </div>
+    </div>
 </form>
 </body>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery-3.4.1.slim.js"></script>
 </html>

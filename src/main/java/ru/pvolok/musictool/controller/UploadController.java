@@ -15,16 +15,16 @@ public class UploadController {
 
     @PostMapping("/upload")
     @ResponseBody
-    public String upload(@RequestParam("name") String[] name, @RequestParam("file") MultipartFile[] file) {
+    public String upload(@RequestParam("file") MultipartFile[] file) {
         for (int i = 0; i < file.length; i++) {
             if (!file[i].isEmpty()) {
                 try {
                     byte[] bytes = file[i].getBytes();
-                    BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(name[i] + "-uploaded")));
+                    BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(i + "-uploaded")));
                     stream.write(bytes);
                     stream.close();
                 } catch (Exception e) {
-                    return "Вам не удалось загрузить " + name[i] + " => " + e.getMessage();
+                    return "Вам не удалось загрузить " + i + " => " + e.getMessage();
                 }
             }
         }

@@ -1,0 +1,11 @@
+.custom-file-input ~ .custom-file-label::after {
+    content: "Выбрать";
+}
+
+#upload-button-col {
+    text-align: center;
+}
+
+.input-group-prepend > span {
+    width: 7em;
+}
